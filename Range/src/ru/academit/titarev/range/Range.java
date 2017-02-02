@@ -9,14 +9,11 @@ public class Range {
         this.to = to;
     }
 
-    public double findLength() {
+    public double getLength() {
         return to - from;
     }
 
     public boolean isInside(double x) {
-        if ((x >= from) && (x <= to)) {
-            return true;
-        }
-        return false;
+        return (x >= from) && (x <= to);
     }
 }
