@@ -9,6 +9,14 @@ public class Range {
         this.to = to;
     }
 
+    public double getFrom() {
+        return from;
+    }
+
+    public double getTo() {
+        return to;
+    }
+
     public double getLength() {
         return to - from;
     }
