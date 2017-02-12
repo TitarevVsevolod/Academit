@@ -4,8 +4,8 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        Range range1 = new Range(0, 7);
-        Range range2 = new Range(3, 8);
+        Range range1 = new Range(4, 7);
+        Range range2 = new Range(1, 5);
         double lengthOfInterval = range1.getLength();
         boolean inside = range1.isInside(-15);
         Range rangeIntersection = range1.getIntersection(range2);
