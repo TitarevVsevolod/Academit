@@ -30,7 +30,7 @@ public class Range {
     }
 
     private boolean isNotIntersection(Range range) {
-        return (this.to < range.from || range.to < this.from);
+        return (this.to <= range.from || range.to <= this.from);
     }
 
     public Range getIntersection(Range range) {
@@ -50,11 +50,11 @@ public class Range {
     public Range[] getDifference(Range range) {
         if (isNotIntersection(range)) {
             return new Range[]{new Range(this.from, this.to)};
-        } else if (this.from < range.from && this.to < range.to) {
+        } else if (this.from <= range.from && this.to <= range.to) {
             return new Range[]{new Range(this.from, range.from)};
-        } else if (this.from < range.from && range.to < this.to) {
+        } else if (this.from <= range.from && range.to <= this.to) {
             return new Range[]{new Range(this.from, range.from), new Range(range.to, this.to)};
-        } else if (range.from < this.from && range.to < this.to) {
+        } else if (range.from <= this.from && range.to <= this.to) {
             return new Range[]{new Range(range.to, this.to)};
         } else {
             return new Range[0];
